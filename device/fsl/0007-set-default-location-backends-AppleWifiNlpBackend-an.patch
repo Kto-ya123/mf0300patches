@@ -1,0 +1,26 @@
+From b639371bb49c912c109dd148048b6fe03114f703 Mon Sep 17 00:00:00 2001
+From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
+Date: Thu, 29 Aug 2019 15:41:24 +0300
+Subject: [PATCH] set default location backends - AppleWifiNlpBackend and
+ disabled lockscreen
+
+---
+ .../base/packages/SettingsProvider/res/values/defaults.xml    | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/mf0300_6dq/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml b/mf0300_6dq/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
+index 93c097b..a09050b 100644
+--- a/mf0300_6dq/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
++++ b/mf0300_6dq/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
+@@ -29,4 +29,8 @@
+     <bool name="def_show_ime_with_hard_keyboard">true</bool>
+     <bool name="def_wifi_on">true</bool>
+     <integer name="def_wifi_scan_always_available">1</integer>
++    <!-- default setting for Settings.Secure.DEFAULT_LOCATION_BACKENDS -->
++    <string name="default_location_backends" translatable="false">org.microg.nlp.backend.apple/org.microg.nlp.backend.apple.BackendService/10321bd893f69af97f7573aafe9de1dc0901f3a1</string>
++    <bool name="def_lockscreen_disabled">true</bool>
++
+ </resources>
+-- 
+2.17.1
+

@@ -1,0 +1,33 @@
+From 57f7722d71e724b8f0430abe478b74b11c30da9a Mon Sep 17 00:00:00 2001
+From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
+Date: Tue, 27 Aug 2019 15:12:51 +0300
+Subject: [PATCH] disable NetworkLocation overlay
+
+---
+ .../frameworks/base/core/res/res/values/config.xml   | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+index 56984ec..e89f0b2 100755
+--- a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
++++ b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+@@ -113,4 +113,16 @@
+         <item>"no_install_unknown_sources"</item>
+     </string-array>
+ 
++    <!-- Whether to enable network location overlay which allows network
++         location provider to be replaced by an app at run-time. When disabled,
++         only the config_networkLocationProviderPackageName package will be
++         searched for network location provider, otherwise packages whose
++         signature matches the signatures of config_locationProviderPackageNames
++         will be searched, and the service with the highest version number will
++         be picked. Anyone who wants to disable the overlay mechanism can set it
++         to false.
++         -->
++    <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
++    <string name="config_networkLocationProviderPackageName" translatable="false">com.google.android.gms</string>
++
+ </resources>
+-- 
+2.17.1
+

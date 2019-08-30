@@ -1,0 +1,36 @@
+From a18717de2997e11d3bdc14df3357b826828eb30e Mon Sep 17 00:00:00 2001
+From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
+Date: Thu, 29 Aug 2019 12:42:10 +0300
+Subject: [PATCH] add permissions for nlp.backend.apple: allows to access
+ approximate/presize location read, read/write external storage, information
+ about networks and wifi newtworks, allows to change wifi connectivity state,
+ allows to open network sockets
+
+---
+ mf0300_6dq/default-permissions.xml | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/mf0300_6dq/default-permissions.xml b/mf0300_6dq/default-permissions.xml
+index a235c04..f00bea9 100644
+--- a/mf0300_6dq/default-permissions.xml
++++ b/mf0300_6dq/default-permissions.xml
+@@ -5,4 +5,16 @@
+         <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false"/>
+         <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="false"/>
+     </exception>
++
++    <exception package="org.microg.nlp.backend.apple">
++        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="false"/>
++        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false"/>
++        <permission name="android.permission.ACCESS_NETWORK_STATE" fixed="false"/>
++        <permission name="android.permission.ACCESS_WIFI_STATE" fixed="false"/>
++        <permission name="android.permission.CHANGE_WIFI_STATE" fixed="false"/>
++        <permission name="android.permission.INTERNET" fixed="false"/>
++        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="false"/>
++        <permission name="android.permission.READ_PHONE_STATE" fixed="false"/>
++        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="false"/>
++    </exception>
+ </exceptions>
+-- 
+2.17.1
+

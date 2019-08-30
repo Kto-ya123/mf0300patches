@@ -1,0 +1,33 @@
+From 36a384dabb4e17e8a894e401e185780c1438eaa8 Mon Sep 17 00:00:00 2001
+From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
+Date: Tue, 27 Aug 2019 15:23:10 +0300
+Subject: [PATCH] wifi configuration
+
+---
+ .../frameworks/base/core/res/res/values/config.xml   | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+index a16333f..b1186d5 100755
+--- a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
++++ b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+@@ -153,4 +153,16 @@
+         <item>com.android.location.fused</item>
+     </string-array>
+ 
++    <!-- Controls the WiFi wakeup feature.
++          0 = Not available.
++          1 = Available.
++     -->
++    <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
++
++    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism.
++         This mechanism allows the host to remain in suspend state and the dongle to actively
++         scan and wake the host when a configured SSID is detected by the dongle. This chipset
++         capability can provide power savings when wifi needs to be always kept on. -->
++    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
++
+ </resources>
+-- 
+2.17.1
+

@@ -1,0 +1,31 @@
+From ebb6c62d373fbd90672419eea3e02e4aa0695265 Mon Sep 17 00:00:00 2001
+From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
+Date: Tue, 27 Aug 2019 15:28:16 +0300
+Subject: [PATCH] set com.google.android.gms as the dafault network recommendation app.
+
+---
+ .../frameworks/base/core/res/res/values/config.xml     | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+index c11d315..56bd2a8 100755
+--- a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
++++ b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+@@ -168,4 +168,14 @@
+     <!-- Flag indicating which package name can access the persistent data partition -->
+     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+ 
++    <!-- The package name of the default network recommendation app.
++         A network recommendation provider must:
++             * Be granted the SCORE_NETWORKS permission.
++             * Be granted the ACCESS_COARSE_LOCATION permission.
++             * Include a Service for the android.net.scoring.RECOMMEND_NETWORKS action
++               protected by the BIND_NETWORK_RECOMMENDATION_SERVICE permission.
++         This must be set to a valid network recommendation app or empty.
++     -->
++    <string name="config_defaultNetworkRecommendationProviderPackage" translatable="false">com.google.android.gms</string>
++
+ </resources>
+-- 
+2.17.1
+

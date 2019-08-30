@@ -1,0 +1,32 @@
+From 7d9ad02178d890d3ce048322057de5581a8302e8 Mon Sep 17 00:00:00 2001
+From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
+Date: Tue, 27 Aug 2019 15:17:28 +0300
+Subject: [PATCH] disable Geofence Overlay
+
+---
+ .../frameworks/base/core/res/res/values/config.xml    | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+index 54e03c9..70af1c4 100755
+--- a/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
++++ b/mf0300_6dq/overlay/frameworks/base/core/res/res/values/config.xml
+@@ -136,4 +136,15 @@
+     <bool name="config_enableGeocoderOverlay" translatable="false">false</bool>
+     <string name="config_geocoderProviderPackageName" translatable="false">com.google.android.gms</string>
+ 
++    <!-- Whether to enable geofence overlay which allows geofence to be replaced
++         by an app at run-time. When disabled, only the
++         config_geofenceProviderPackageName package will be searched for
++         geofence implementation, otherwise packages whose signature matches the
++         signatures of config_locationProviderPackageNames will be searched, and
++         the service with the highest version number will be picked. Anyone who
++         wants to disable the overlay mechanism can set it to false.
++         -->
++    <bool name="config_enableGeofenceOverlay" translatable="false">false</bool>
++    <string name="config_geofenceProviderPackageName" translatable="false">com.google.android.gms</string>
++
+ </resources>
+-- 
+2.17.1
+

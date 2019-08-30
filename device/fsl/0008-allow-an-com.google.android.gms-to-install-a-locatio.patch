@@ -1,0 +1,26 @@
+From e5c0d344ca74ffbdac7117bae1b5e8df92ca54c0 Mon Sep 17 00:00:00 2001
+From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
+Date: Thu, 29 Aug 2019 15:48:24 +0300
+Subject: [PATCH] allow an com.google.android.gms to install a location
+ provider into the Location Manager
+
+---
+ mf0300_6dq/privapp-permissions.xml | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/mf0300_6dq/privapp-permissions.xml b/mf0300_6dq/privapp-permissions.xml
+index e88c0a4..6e1a6a8 100644
+--- a/mf0300_6dq/privapp-permissions.xml
++++ b/mf0300_6dq/privapp-permissions.xml
+@@ -13,4 +13,8 @@
+         <permission name="android.permission.CAPTURE_VIDEO_OUTPUT"/>
+         <permission name="android.permission.READ_FRAME_BUFFER"/>
+     </privapp-permissions>
++
++    <privapp-permissions package="com.google.android.gms">
++        <permission name="android.permission.INSTALL_LOCATION_PROVIDER"/>
++    </privapp-permissions>
+ </permissions>
+-- 
+2.17.1
+
