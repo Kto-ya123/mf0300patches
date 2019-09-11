@@ -1,7 +1,7 @@
 From a18717de2997e11d3bdc14df3357b826828eb30e Mon Sep 17 00:00:00 2001
 From: Artur Luzgin <artur.luzgin.luzgin@mail.ru>
 Date: Thu, 29 Aug 2019 12:42:10 +0300
-Subject: [PATCH] add permissions for nlp.backend.apple: allows to access
+Subject: [PATCH] add exception permissions for nlp.backend.apple, which use access without user permission: allows to access
  approximate/presize location read, read/write external storage, information
  about networks and wifi newtworks, allows to change wifi connectivity state,
  allows to open network sockets
